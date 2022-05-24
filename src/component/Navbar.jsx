@@ -18,8 +18,10 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
-import { FormControl, OutlinedInput, TextField } from "@mui/material";
-import { height } from "@mui/system";
+import { FormControl, OutlinedInput } from "@mui/material";
+import {signInWithGoogle} from "./Firebase";
+
+
 
 const drawerWidth = 240;
 
@@ -117,12 +119,18 @@ export default function MiniDrawer() {
           >
             <MenuIcon />
           </IconButton>
+          <button style={{border : 0, background : 0 }}> <img alt="search" height="45px"  src={"https://img.icons8.com/ios/344/youtube-play--v1.png"}/></button>
           <Typography variant="h6" noWrap component="div">
             Youtube Pro
           </Typography>
           <FormControl sx={{ width: "60ch", paddingLeft: "10ch" }}>
-            <OutlinedInput placeholder=" Search " />
+            <OutlinedInput sx={{ height: "5ch" }} placeholder=" Search " />
           </FormControl>
+           <button> <img alt="search" height="34px"  src={"https://img.icons8.com/ios-glyphs/344/search--v1.png"}/>
+           </button>
+              <div style={{paddingLeft: '650px'}}>
+           <button onClick={signInWithGoogle} style={{height: '40px', width: '80px', }}>Sign up</button>
+           </div>
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
