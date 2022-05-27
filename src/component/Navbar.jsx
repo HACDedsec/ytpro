@@ -20,6 +20,8 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import { FormControl, OutlinedInput } from "@mui/material";
 import {signInWithGoogle} from "./Firebase";
+import Homescreen from './Homescreen';
+
 
 
 
@@ -172,7 +174,8 @@ export default function MiniDrawer() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-      </Box>
+        <Homescreen />
+         </Box>
     </Box>
   );
 }
