@@ -1,6 +1,6 @@
 
 import { initializeApp } from "firebase/app";
-import {getAuth, GoogleAuthProvider, signInWithPopup} from "firebase/auth";
+import {getAuth, GoogleAuthProvider, signInWithPopup, signOut} from "firebase/auth";
 
 
 const firebaseConfig = {
@@ -37,3 +37,14 @@ const provider = new GoogleAuthProvider()
         })
 
 }
+
+export const signOutWithGoogle = () => {
+    signOut(auth).then(()=>{
+        localStorage.removeItem("name");
+        localStorage.removeItem("email");
+    }).catch((error)=>{
+        console.log(error);
+    })
+}
+
+export default signOutWithGoogle;
